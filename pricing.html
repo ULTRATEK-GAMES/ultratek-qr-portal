@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ULTRATEK Pricing</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .pricing-hero {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #0a74da;
+      color: #fff;
+    }
+    .pricing-hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .pricing-hero p {
+      font-size: 1.1rem;
+      color: #eee;
+    }
+
+    .pricing-section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+    .pricing-section h2 {
+      color: #0a74da;
+      margin-bottom: 1rem;
+    }
+    .pricing-section p {
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+    }
+    .pricing-table th,
+    .pricing-table td {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+    }
+    .pricing-table th {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .pricing-table tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    footer a {
+      color: #0a74da;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔝 Sticky Header -->
+  <header class="mobile-header">
+    <button id="menu-toggle">☰</button>
+    <h1>ULTRATEK</h1>
+  </header>
+
+  <!-- 📱 Side Menu -->
+  <nav id="side-menu" class="side-menu">
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="console.html">🎮 Console</a></li>
+      <li><a href="pc-lan.html">💻 PC LAN</a></li>
+      <li><a href="vr.html">🕶️ VR</a></li>
+      <li><a href="table-tennis.html">🏓 Table Tennis</a></li>
+      <li><a href="pool.html">🎱 Pool</a></li>
+      <li><a href="board-games.html">🧩 Board Games</a></li>
+      <li><a href="big-screen.html">📺 Big Screen</a></li>
+      <li><a href="print.html">🖨️ Print</a></li>
+      <li><a href="reservations.html">🎟️ Reserve</a></li>
+      <li><a href="rewards.html">🎁 Rewards</a></li>
+      <li><a href="pricing.html">💸 Pricing</a></li>
+    </ul>
+  </nav>
+
+  <!-- 💸 Hero Section -->
+  <section class="pricing-hero">
+    <h1>💸 ULTRATEK Pricing</h1>
+    <p>Ask about membership to save time, earn reward points, and unlock free games!</p>
+  </section>
+
+  <!-- 📋 Pricing Table -->
+  <section class="pricing-section">
+    <h2>🎮 Services & Rates</h2>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Players</th>
+          <th>Price</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Table Tennis</td><td>2</td><td>₦500</td><td>30 mins</td></tr>
+        <tr><td>PS5 & Xbox-X Games</td><td>1</td><td>₦500</td><td>30 mins</td></tr>
+        <tr><td>Pool</td><td>2</td><td>₦500</td><td>30 mins</td></tr>
+        <tr><td>PC Games</td><td>1</td><td>₦500</td><td>30 mins</td></tr>
+        <tr><td>Live Soccer Viewing</td><td>Up to 20</td><td>₦500</td><td>1 match</td></tr>
+        <tr><td>Group Party</td><td>Up to 20</td><td>Ask</td><td>3-hour slot</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 📡 Footer -->
+  <footer>
+    <p>Back to <a href="index.html">ULTRATEK Home</a> or <a href="reservations.html">Reserve a Slot</a></p>
+  </footer>
+
+  <!-- 🧠 Scripts -->
+  <script>
+    // 🔘 Toggle Side Menu
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('side-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+
+    // 👉 Swipe Gesture Logic
+    let touchStartX = 0;
+    let touchEndX = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX;
+      if (swipeDistance > 80) {
+        menu.classList.add('open');
+      } else if (swipeDistance < -80) {
+        menu.classList.remove('open');
+      }
+    }
+
+    // ✨ Active Zone Highlight
+    const currentPage = window.location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll("#side-menu a");
+    menuLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+
+</body>
+</html>
