@@ -229,3 +229,69 @@ footer a {
   display: block;
   margin-bottom: 2rem;
 }
+/* ===========================
+   ULTRATEK Loyalty Rewards
+   =========================== */
+
+.rewards-hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.rewards-hero h1 {
+  font-size: 2.2rem;
+  color: #0a74da;
+}
+.rewards-hero p {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.rewards-poster {
+  text-align: center;
+  margin: 2rem auto;
+}
+.rewards-poster img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.rewards-list {
+  background: #f4f4f4;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  border-radius: 8px;
+}
+.rewards-list h2 {
+  color: #0a74da;
+  margin-bottom: 1rem;
+}
+.rewards-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+.rewards-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+}
+.rewards-list span {
+  color: red;
+  font-weight: bold;
+}
+
+/* ===========================
+   Footer Consistency
+   =========================== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+footer a {
+  color: #0a74da;
+  text-decoration: none;
+}
